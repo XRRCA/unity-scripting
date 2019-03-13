@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class PublicPrivateExample : MonoBehaviour
 {
-
-    public float g_x;
-    public float g_y;
-    private float g_z;
+    public Transform target;
+    public float x;
+    public float y;
+    private float z;
 
     // Use this for initialization
     void Start()
     {
-        g_x = 0.0f;
-        g_y = 1.0f;
-        g_z = 0.0f;
+        x = target.position.x;
+        y = target.position.y;
+        z = target.position.z;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(g_x, g_y, g_z);
+        target.position = new Vector3(x, y, z);
     }
 }
