@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MouseDown : MonoBehaviour {
+    Rigidbody rb;
 
-	// Use this for initialization
-	void Start () {
-		
+	private void Start()
+	{
+        rb = GetComponent<Rigidbody>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    void OnMouseUpAsButton()
+    {
+        rb.isKinematic = false;
+        rb.AddForce(-transform.forward * 1500f,ForceMode.Impulse);
+        rb.useGravity = true;
+    }
+
+
 }

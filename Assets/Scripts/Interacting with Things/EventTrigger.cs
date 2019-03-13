@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EventTrigger : MonoBehaviour {
+    
+	public void Triggered()
+	{
+        
+	}
 
-	// Use this for initialization
-	void Start () {
+	private void OnTriggerEnter(Collider other)
+	{
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	private void OnTriggerStay(Collider other)
+	{
+		
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
 		
 	}
 }

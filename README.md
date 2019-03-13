@@ -670,11 +670,19 @@ Despite having very different appearances, all these models and architectures ar
 + Accessing components - GetComponent, GetComponentInChildren, GetComponentInParent e.g. `Rigidbody rb = GetComponent<Rigidbody>();`
 + Enabling and disabling components
 + Activating and deactivating GameObjects
-+ Changing colors on materials
++ Changing colors on materials, short intro to Color Lerp-ing
++ Using the webcam to view yourself
 
 ### Moving things
 
++ Translate - move something in a direction over time.
++ LookAt - make rotations face the directions of targets, in two ways.
+
 ### Interacting with things
+
++ MouseDown - clicking things in the screen space
++ Raycasting - shooting lasers to hit things in space
++ HitEvent - moving the process of object effects on the objects themselves
 
 ## Fake it till you make it, how to copy paste code
 
