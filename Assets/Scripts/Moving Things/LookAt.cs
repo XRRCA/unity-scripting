@@ -15,8 +15,15 @@ public class LookAt : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(method == LookType.LookAt)
-            transform.LookAt(target);
+        {
+            // TODO use Transforms LookAt method
+        }
+            
         else if (method == LookType.LookRotation)
-            transform.rotation = Quaternion.LookRotation(transform.position - target.position);
+        {
+            // TODO Copmute a direction verctor and use
+            // transform.rotation = Quaternion.LookRotation(directionVector)
+        }
+            
 	}
 }

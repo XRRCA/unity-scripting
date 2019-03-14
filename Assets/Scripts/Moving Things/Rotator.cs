@@ -19,6 +19,7 @@ public class Rotator : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(g_x, g_y, g_z);
+        // TODO use a rotation method to spin the object. 
+        // Use the public variables to tweak from the editor
     }
 }
