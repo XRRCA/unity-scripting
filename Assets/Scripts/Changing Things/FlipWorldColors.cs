@@ -11,7 +11,8 @@ public class FlipWorldColors : MonoBehaviour
     public FloatToText text;
 
     bool colorsFlipped;
-    float t;
+    float lerpTime;
+
     // Use this for initialization
     void Start()
     {
@@ -19,10 +20,8 @@ public class FlipWorldColors : MonoBehaviour
 
         originalColors = new Color[renderers.Length];
 
-        for (int i = 0; i < renderers.Length; i++)
-        {
-            originalColors[i] = renderers[i].material.color;
-        }
+        // TODO Store colors on materials in renderers in the originalColors array
+
     }
 
     // Update is called once per frame
@@ -31,34 +30,39 @@ public class FlipWorldColors : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             colorsFlipped = !colorsFlipped;
-            t = 0;
+            lerpTime = 0;
         }
+
+        // TODO Make an IF ELSE statement to Lerp a Color up or down, 
+        // and set each renderer's material to that color. You will need to: 
+        // Increment time, 
+        // Use the Color.Lerp(colorA, colorB, lerpTime)
 
         if (colorsFlipped)
         {
-            if (t < 1)
+            if (lerpTime < 1)
             {
                 for (int i = 0; i < renderers.Length; i++)
                 {
-                    renderers[i].material.color = Color.Lerp(originalColors[i], flippedColor, t);
+                    renderers[i].material.color = Color.Lerp(originalColors[i], flippedColor, lerpTime);
                 }
-                t += Time.deltaTime;
+                lerpTime += Time.deltaTime;
 
             }
         }
         else
         {
-            if (t < 1)
+            if (lerpTime < 1)
             {
                 for (int i = 0; i < renderers.Length; i++)
                 {
-                    renderers[i].material.color = Color.Lerp(flippedColor, originalColors[i], t);
+                    renderers[i].material.color = Color.Lerp(flippedColor, originalColors[i], lerpTime);
                 }
-                t += Time.deltaTime;
+                lerpTime += Time.deltaTime;
 
             }
         }
 
-        text.Input = t;
+        text.Input = lerpTime;
     }
 }

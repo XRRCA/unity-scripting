@@ -7,16 +7,11 @@ public class EnableGameObjects : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
-        if ( other.tag == "Player"){
-            alternateTrees.SetActive(true);
-        }
+        // TODO Switch on trees using SetActive if the "other" has a Player tag
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-        if (other.tag == "Player")
-        {
-            alternateTrees.SetActive(false);
-        }
+        // TODO Switch on trees using SetActive if the "other" has a Player tag
 	}
 }

@@ -8,6 +8,7 @@ public class ActivateComponents : MonoBehaviour
 
     bool mountainsVisible = true;
     bool processComplete = true;
+
     // Use this for initialization
     void Start()
     {
@@ -19,17 +20,12 @@ public class ActivateComponents : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            mountainsVisible = !mountainsVisible;
-            processComplete = false;
+            // TODO Set variables to start the next logic phase
         }
 
-        if (!processComplete)
-        {
-            for (int i = 0; i < mountains.Length; i++)
-            {
-                mountains[i].enabled = mountainsVisible;
-            }
-        }
+        // TODO Make an IF and a LOOP to switch on or off all the mountain renderers
+        // IF
+            // LOOP
 
     }
 }
