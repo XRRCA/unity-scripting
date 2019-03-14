@@ -30,39 +30,15 @@ public class FlipWorldColors : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             colorsFlipped = !colorsFlipped;
-            lerpTime = 0;
         }
 
         // TODO Make an IF ELSE statement to Lerp a Color up or down, 
         // and set each renderer's material to that color. You will need to: 
-        // Increment time, 
+        // Increment/decrement time, 
+        // Iterate an array
         // Use the Color.Lerp(colorA, colorB, lerpTime)
 
-        if (colorsFlipped)
-        {
-            if (lerpTime < 1)
-            {
-                for (int i = 0; i < renderers.Length; i++)
-                {
-                    renderers[i].material.color = Color.Lerp(originalColors[i], flippedColor, lerpTime);
-                }
-                lerpTime += Time.deltaTime;
-
-            }
-        }
-        else
-        {
-            if (lerpTime < 1)
-            {
-                for (int i = 0; i < renderers.Length; i++)
-                {
-                    renderers[i].material.color = Color.Lerp(flippedColor, originalColors[i], lerpTime);
-                }
-                lerpTime += Time.deltaTime;
-
-            }
-        }
-
+        // Update the GUI with current lerp time.
         text.Input = lerpTime;
     }
 }
