@@ -14,7 +14,10 @@ public class MouseDown : MonoBehaviour {
     void OnMouseUpAsButton()
     {
         rb.isKinematic = false;
-        rb.AddForce(-transform.forward * 1500f,ForceMode.Impulse);
+        // TODO Add force to rigid body
+        // AddForce(direction, ForceMode.Impulse);
+        Vector3 forceDirection = -transform.forward * 1500f;
+
         rb.useGravity = true;
     }
 

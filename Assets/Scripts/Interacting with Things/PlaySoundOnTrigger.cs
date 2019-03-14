@@ -16,6 +16,6 @@ public class PlaySoundOnTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        sound.PlayOneShot(sound.clip);
+        // TODO Trigger sound play if anything enters this object
     }
 }
