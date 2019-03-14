@@ -9,16 +9,16 @@ A gentle intro to scripting in Unity
 + Practice making scripts to control and effect things in Unity
 + Introduce a set of existing API functions for GameObject, movement, maths, and event triggering. Use the Physics and Interaction workshop to go deeper.
 + Start to evaluate what you know, need to know and need help with.
-+ Get an idea of what time scales happen in Unity, and how to work with/around them.
 
 # Contents
 
-+ [Scripting Basics](#scripting-basics)
++ [The Language of Code](#the-language-of-code)
 + [Models and architecture](#models-and-architecture)
++ [Practical](#practical)
 + [Tactics](#tactics)
 
 ----
-# Scripting Basics
+# The Language of Code
 
 ## The Basics of Programming with C#
 
@@ -30,6 +30,7 @@ Stolen from [here](https://www.codingforart.com/processing-section-3/).
 
 Variables give us the power to vary our programs creatively.
 Variables store information (data) that your computer uses in flexible ways.
+
 #### Types of basic variables
 The type of variable must be specified in the program so the computer can actually use it.
 
@@ -99,7 +100,7 @@ As a simple case variables can be used like algebra variables
 
 ```csharp
 int dob = 1984;
-int year = 2018;
+int year = 2019;
 int age = year - dob;
 ```
 
@@ -563,7 +564,7 @@ void draw()
 }
 ```
 
-But! OOP introduces often dogmatic links and hierarchies, historically, Game developers found aspects of OOP too containing and inefficient for the types of systems they needed to make.
+But! OOP introduces often dogmatic links and hierarchies, historically, Game developers found aspects of OOP too constraining and inefficient for the types of systems they needed to make.
 
 ## Entity Component System architecture
 
@@ -604,39 +605,6 @@ All components in Unity inherit from `MonoBehaviour`, this gives them access to 
 
 Each Component in the editor on an GameObject is a collection of instructions to give and object properties or behaviours.
 
-##### Creating scripts
-
-Create in the editor either in assets or on a GameObject.
-
-##### Variables and Functions
-
-See script VariablesAndFunctions.cs
-
-#### Conventions and Syntax
-
-Syntax is the strucutre of the language. The are heirarchical, like an address.
-
-+ Curly brackets - contains instructions
-+ Semi-colons - end statements
-+ Indentations - used for readabiliy
-+ Comments - single line use double slash, multiline use slash star convention
-+ If Statements - make decisions based on data
-+ Loops - controlling iteration through things and processes.
-+ Scope and Access Modifiers - area where variables can be used. Local to classes and functions. Public and private access modifiers is keyword used when declaring variables.
-
-#### How Unity works
-
-```
-/////////////////////////////////////////////////
-// CHECK UNITY FUNCTION OVERVIEW SCRIPT FOLDER //
-/////////////////////////////////////////////////
-
-OrderOfExecution.cs - How things happen at different times.
-PublicPrivateExample.cs - How to make things visible in the editor.
-ErrorExample.cs - Seeing errors in the console.
-
-```
-
 ### Warning on wording
 
 unity is developing a update to its architecture to improve performance, these are titled "Pure ECS" and "Hybrid ECS". These are unstable for your project work, and are quite complicated to get your head around.
@@ -653,19 +621,49 @@ Despite having very different appearances, all these models and architectures ar
 + Programs use input and adjust behaviour based on instructions.
 
 ----
+# Practical
+## Basics
+### Creating scripts
 
-# Tactics
+Create in the editor either in assets or on a GameObject.
 
-## Don't reinvent the wheel, for now - get API awareness
+### Variables and Functions
 
-### Making things
+See script VariablesAndFunctions.cs
+
+### Conventions and Syntax
+
+Syntax is the strucutre of the language. The are heirarchical, like an address.
+
++ Curly brackets - contains instructions
++ Semi-colons - end statements
++ Indentations - used for readabiliy
++ Comments - single line use double slash, multiline use slash star convention
++ If Statements - make decisions based on data
++ Loops - controlling iteration through things and processes.
++ Scope and Access Modifiers - area where variables can be used. Local to classes and functions. Public and private access modifiers is keyword used when declaring variables.
+
+### How Unity works
+
+```
+/////////////////////////////////////////////////
+// CHECK UNITY FUNCTION OVERVIEW SCRIPT FOLDER //
+/////////////////////////////////////////////////
+
+OrderOfExecution.cs - How things happen at different times.
+PublicPrivateExample.cs - How to make things visible in the editor.
+ErrorExample.cs - Seeing errors in the console.
+
+```
+
+## Making things
 
 + Instantiate - ways to populate a scene at runtime
 + Co-routines - doing a process with time gaps
 + Destroy - removing GameObjects after a time period
 + Using Input - using key commands
 
-### Changing things
+## Changing things
 
 + Accessing components - GetComponent, GetComponentInChildren, GetComponentInParent e.g. `Rigidbody rb = GetComponent<Rigidbody>();`
 + Enabling and disabling components
@@ -673,16 +671,26 @@ Despite having very different appearances, all these models and architectures ar
 + Changing colors on materials, short intro to Color Lerp-ing
 + Using the webcam to view yourself
 
-### Moving things
+## Moving things
 
 + Translate - move something in a direction over time.
 + LookAt - make rotations face the directions of targets, in two ways.
 
-### Interacting with things
+## Interacting with things
 
 + MouseDown - clicking things in the screen space
 + Raycasting - shooting lasers to hit things in space
 + HitEvent - moving the process of object effects on the objects themselves
+
+----
+
+# Tactics
+
+## Don't reinvent the wheel, for now - get API awareness
+
+The stuff in the practical is just sratching the surface of all the functions that Unity give you for free.
+
+The big part is mapping what you want to the language of the field, game development.
 
 ## Fake it till you make it, how to copy paste code
 
@@ -690,7 +698,8 @@ You need to develop ways of looking at exisiting resources and adapting them.
 
 Good code should make this easy.
 
-But remember all of other peoples code was made for their purpose, not maybe your exact idea. You have to remember what you want to achieve.
+But remember all of other peoples code was made for their purpose, not maybe your exact idea. 
+You have to remember what you want to achieve.
 
 ## Coding mindset
 
