@@ -21,12 +21,9 @@ public class SpawningExample : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(t);
-            for(int i = 0; i < numberToCreate; i++)
-            {
-                var position = transform.position + new Vector3(Random.Range(-x, x), 10, Random.Range(-y, y));
-                var ball = Instantiate(prefab,position,Quaternion.identity);
-                Destroy(ball.gameObject, lifeLength);
-            }
+            // TODO Use a LOOP to Instantiate 15 prefabs
+            // Usful bits:
+            // var position = transform.position + new Vector3(Random.Range(-x, x), 10, Random.Range(-y, y));
         }
         
     }

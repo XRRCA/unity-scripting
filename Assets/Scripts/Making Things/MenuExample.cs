@@ -19,14 +19,12 @@ public class MenuExample : MonoBehaviour {
             menuActive = !menuActive;
         }
 
-        if (menuActive && !menu)
-        {
-            var pos = transform.position + transform.forward * distance;
-            menu = Instantiate(menuPrefab, pos, Quaternion.LookRotation(-transform.forward));
-        }
-        else if (!menuActive && menu)
-        {
-            Destroy(menu);
-        }
+        // TODO Switch on and off the menu depending on input
+        // Do button switching IF 
+        // IF ON AND NOMENU - MAKE MENU
+            // menuPos = playerPosition + playerTransform.forwardDirection * distance
+            // Instantiate 
+        // ELSEIF OFF AND MENU - DESTROY MENU
+
 	}
 }
