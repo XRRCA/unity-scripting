@@ -13,12 +13,11 @@ public class BasicSyntax : MonoBehaviour
         // Comment for a line below
         Debug.Log(transform.position.x);
 
-        /* Block Comment
+         /*Block Comment
         if (transform.position.y <= 5f)
         {
             Debug.Log("I'm about to hit the ground!");
-        }
-        */
+        }*/
     }
 
     void Update()
